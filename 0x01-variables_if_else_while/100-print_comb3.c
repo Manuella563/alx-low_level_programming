@@ -2,26 +2,21 @@
 
 /**
  * main - prints all possible different combinations of two digits
- *
- * Return: Always 0 (success)
- *
+ * Return: ALways 0 (Success)
  */
-
 int main(void)
-
 {
-	int ones = '0';
-	int tens = '0';
-	
-	for (tens = '0'; tens <= '9'; tens++)/* prints tens digit*/
+	int n, m;
+
+	for (n = 48; n <= 56; n++)
 	{
-		for (ones = '0'; ones <= '9'; ones++)/* prints ones digit*/
+		for (m = 49; m <= 57; m++)
 		{
-			if (!((ones == tens) || (tens > ones)))/*eliminates repitition*/
+			if (m > n)
 			{
-				putchar(tens);
-				putchar(ones);
-				if (!(ones == '9' && tens == '8'))/*addes commma and space*/
+				putchar(n);
+				putchar(m);
+				if (n != 56 || m != 57)
 				{
 					putchar(',');
 					putchar(' ');
@@ -29,9 +24,6 @@ int main(void)
 			}
 		}
 	}
-	
 	putchar('\n');
-
 	return (0);
-
 }
